@@ -1,26 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+//IMPORT COMPONENTS HERE
+import Main from './components/MainPage/Main';
+import NavBar from './components/NavBar/NavBar';
+import CandidatesPage from './components/CandidatesPage';
+import CandidateHomePage from './components/CandidateHomePage';
+import EmployerHomePage from './components/EmployerHomePage';
+import CreateProfile from './components/CreateUserProfile';
+import EmployerPositions from './components/EmployerPositions/EmployerPositions';
+import AddPositionForm from './components/AddPositionForm';
+import CandidateProfile from './components/CandidateProfile/CandidateProfile'
+
+import 'materialize-css/dist/css/materialize.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+          <Route path="/" component={NavBar} />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/employerHome" component={EmployerHomePage} />
+          <Route exact path="/employerHome/positions" component={EmployerPositions} />
+          {/* <Route exact path="/employer/positions/:id" component={SortedCandidatesList} /> */}
+          <Route exact path="/employer/addPosition" component={AddPositionForm} />
+          <Route exact path="/candidates" component={CandidatesPage} />
+          <Route exact path='/candidateProfile/:userName' component={CandidateProfile} />
+          <Route exact path="/candidateHome" component={CandidateHomePage} />
+          <Route exact path="/candidateHome/createprofile" component={CreateProfile} />
+      </div>
+    </Router>
+  )
 }
 
 export default App;
