@@ -11,7 +11,7 @@ class NavBar extends Component{
                     <ul id="nav-mobile" className="left hide-on-med-and-down">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/candidates">Candidates</Link></li>
-                        <li><Link to="/positions">Open Positions</Link></li>
+                        <li><Link to="/employerHome/positions">Open Positions</Link></li>
                     </ul>
                     </div>
                 </nav>

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import createProfileAction from '../actions/createProfileAction'
 import { bindActionCreators } from 'redux';
+import M from 'materialize-css';
+
 
 
 class CreateProfile extends Component{
@@ -11,7 +13,12 @@ class CreateProfile extends Component{
         nameLast: "",
         email: "",
         phone: "",
-        password: ""
+        password: "",
+        years_of_experience: "",
+        location:"",
+        education:"",
+        skills: [],
+        title: ""
     }
     
     handleFirstNameChange = (e) => {
@@ -34,18 +41,40 @@ class CreateProfile extends Component{
         this.setState({password:e.target.value})
     }
 
+    handleExperienceChange = (e) => {
+        this.setState({years_of_experience: e.target.value})
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault()
-        const userData = [...this.state]
+        const userData = {...this.state}
         this.props.createProfileAction(userData)
+    }
+    
+    componentDidMount(){
+        M.AutoInit();
+        document.addEventListener('DOMContentLoaded', function() {
+            const elems = document.querySelectorAll('.chips');
+            // eslint-disable-next-line no-unused-vars
+            const instances = M.Chips.init(
+                elems, {
+                    onChipAdd: handleChip,
+                    onChipDelete: handleChip
+                }
+                );
+          });
+
+        const handleChip = (e) =>{
+            // console.log((e[0].M_Chips.chipsData))
+            let chipData = (e[0].M_Chips.chipsData).map((chip)=>{
+                return (chip.tag.toLowerCase())
+            })
+            this.setState({skills:chipData})
+          }
     }
     
     render(){
         return(
-            //NAME
-            //EMAIL
-            //TITLE
-            //SALARY RANGE
             <div className="container">
                 <h1>Create Profile</h1>
                 <div className="row">
@@ -91,7 +120,31 @@ class CreateProfile extends Component{
                                 <input className="file-path validate" type="text" placeholder="Upload one or more files"/>
                             </div>
                         </div>
-                    <div className="row">
+                    
+                    <div className='input-field col s12'>
+                        <select id='yearsExperience' value={this.state.years_of_experience} onChange={this.handleExperienceChange} ref="select">
+                            <option value="">Years of Experience?</option>
+                            <option value="1">0-1</option>
+                            <option value="2">2-3</option>
+                            <option value="3">3-5</option>
+                            <option value="4">5-10</option>
+                            <option value="5">10+</option>
+                        </select>
+                    </div>
+                    <div className='input-field col s12'>
+                        <select id='positionTitle' value={this.state.title} onChange={this.handlePositionChange} ref="select">
+                            <option value="">What job are you looking for?</option>
+                            <option value="Software Developer">Software Developer</option>
+                            <option value="Mobile Application Developer">Mobile Application Developer</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Business Development Rep">Business Development Rep</option>
+                        </select>
+                    </div>
+                    <div className='input-field col s12' >
+                        <div id="user-skills" className="chips chips-autocomplete"></div>
+                    </div>
+                    <div className="input-field row">
                         <input onClick={this.handleFormSubmit}className="waves-effect waves-light btn-large blue-grey darken-2" type="submit" value="submit" />
                     </div>
                     </form>
@@ -101,11 +154,6 @@ class CreateProfile extends Component{
     }
 }
 
-function mapStateToProps(state){
-    return {
-
-    }
-}
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({

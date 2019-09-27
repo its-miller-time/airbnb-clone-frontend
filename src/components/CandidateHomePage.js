@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 class CandidateHomePage extends Component{
+    
     render(){
         return(
             //ALL OPEN POSITIONS
@@ -22,9 +22,6 @@ class CandidateHomePage extends Component{
     }
 }
 
-function mapStateToProps(state){
-
-}
 
 export default CandidateHomePage;
 // export default connect(mapStateToProps)(CandidateHomePage);

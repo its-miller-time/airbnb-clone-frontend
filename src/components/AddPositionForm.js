@@ -10,7 +10,7 @@ class AddPositionForm extends Component{
     state = {
         company_name: "",
         title:"",
-        skills: "",
+        skills: [],
         employer_position: "",
         years_of_experience: "",
     }
@@ -42,6 +42,7 @@ class AddPositionForm extends Component{
         M.AutoInit();
         document.addEventListener('DOMContentLoaded', function() {
             const elems = document.querySelectorAll('.chips');
+            // eslint-disable-next-line no-unused-vars
             const instances = M.Chips.init(
                 elems, {
                     onChipAdd: handleChip,
@@ -100,11 +101,11 @@ class AddPositionForm extends Component{
     }
 }
 
-function mapStateToProps(state){
-    return{
-        positions: state.positionsData
-    }
-}
+// function mapStateToProps(state){
+//     return{
+//         positions: state.positionsData
+//     }
+// }
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({

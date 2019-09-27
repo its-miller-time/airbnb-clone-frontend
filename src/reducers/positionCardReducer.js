@@ -36,7 +36,6 @@ const seedData = [
 ]
 
 export default(state=seedData,action) => {
-    console.log('positionData reducer running')
     let newState = [...state]
     const p = action.payload
     switch(action.type) {

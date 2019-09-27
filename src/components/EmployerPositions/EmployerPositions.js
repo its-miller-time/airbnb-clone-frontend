@@ -1,24 +1,34 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PositionCard from '../PositionCards/PositionCard';
 import AddPositionForm from '../AddPositionForm';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Position from '../Utility/Position'
 
 
 class EmployerPositions extends Component{
-    render(){
-
-        // handlePositionCardClick = () => {
-
-        // }
-
-        const positions = this.props.positionData.map((position,i) => {
-            return(
-                <Link to="/candidates" key={i}>
-                    <PositionCard positions={position} key={i}/>
-                </Link>
-            )
+    
+    state = {
+        positions: []
+    }
+    
+    componentDidMount(){
+        const allPositions = axios.get(`${window.apiHost}/employers/positions`)
+        allPositions.then((resp)=>{
+            const positions = resp.data
+            this.setState({
+                positions
+            })
         })
+    }
+    
+    render(){
+        // const positions = this.props.positionData.map((position,i) => {
+        //     return(
+        //         <Link to="/candidates" key={i}>
+        //             <PositionCard positions={position} key={i}/>
+        //         </Link>
+        //     )
+        // })
         return(
             <div className="container-fluid col s12">
                 <h1>Open Positions</h1>
@@ -27,7 +37,7 @@ class EmployerPositions extends Component{
                         <AddPositionForm />
                     </div>
                     <div className="container col s6"> 
-                        {positions}
+                        <Position positions={this.state.positions} />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
 import './CandidateProfile.css'
 
 
@@ -13,6 +12,7 @@ class CandidateProfile extends Component{
     render(){
         const username = this.props.match.params['userName']
         const candidate = this.props.candidateData.find(candidate=>candidate.username === username)
+        // eslint-disable-next-line no-unused-vars
         const {nameFirst, nameLast, email, phone, most_recent_job_role, desired_job_role,years_of_experience,desired_salary_range,desired_location_city,skills,level_of_education,candidate_summary} = candidate
         const skillsArray = skills.map((skill,i)=>{
             return <p key={i}>{skill}</p>
@@ -67,11 +67,6 @@ function mapStateToProps(state){
     }
 }
 
-function mapDispatchtoProps(dispatch){
-    return bindActionCreators({
-
-    })
-}
 
 // export default CandidateProfile;
 export default connect(mapStateToProps,null)(CandidateProfile)

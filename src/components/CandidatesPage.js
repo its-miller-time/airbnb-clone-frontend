@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import CandidateCard from './CandidateCard';
-import CreateProfile from './CreateUserProfile';
+import CandidateCard from './Utility/CandidateCard';
 import { Link } from 'react-router-dom';
 
 class CandidatesPage extends Component{
