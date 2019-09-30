@@ -37,6 +37,7 @@ class EmployerPositions extends Component{
                         <AddPositionForm />
                     </div>
                     <div className="container col s6"> 
+                        <h3>Positions</h3>
                         <Position positions={this.state.positions} />
                     </div>
                 </div>
