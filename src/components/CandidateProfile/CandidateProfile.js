@@ -74,8 +74,10 @@ class CandidateProfile extends Component{
                     </li> */}
                 </ul>
                 <div className="row">
-                    <input></input>
-                    <input></input>
+                    {/* example function for onClick below */}
+                    {/* ()=> {props.changeModalContent('signUp')} */}
+                    <button onClick={this.handleAddCandiate} className="candidate-profile-btn btn-large">Add Candidate</button>
+                    <button onClick={this.handleDeclineCandidate} className="candidate-profile-btn btn-large">Decline Candidate</button>
                 </div>
 
 

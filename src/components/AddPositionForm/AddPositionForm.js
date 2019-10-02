@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import M from 'materialize-css';
 import { bindActionCreators } from 'redux';
-import addPositionAction from '../actions/addPositionAction'
+import addPositionAction from '../../actions/addPositionAction'
+import "./AddPositionForm.css"
 
 
 class AddPositionForm extends Component{
@@ -62,8 +63,8 @@ class AddPositionForm extends Component{
     
     render(){
         return (
-            <div className="container">
-                <h1>Add A Position</h1>
+            <div className="add-position-form container">
+                <h3>Add A Position</h3>
                     <form className="col s12">
                         <div className="row">
                             <div className="input-field col s12">

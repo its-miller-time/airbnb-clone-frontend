@@ -8,7 +8,7 @@ class NavBar extends Component{
             <div className="nav">
                 <nav className="nav transparent">
                     <div className="nav transparent yllow">
-                    <a href="/" className="yllow brand-logo center"></a>
+                    {/* <a href="/" className="yllow brand-logo center"></a> */}
                     <ul id="" className="n">    
                         <li className="nav"><Link to="/">HOME</Link></li>
                         <li><Link to="/candidates">CANDIDATES</Link></li>

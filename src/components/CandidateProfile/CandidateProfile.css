@@ -6,3 +6,29 @@
 .candidate-profile-full {
     padding-top: 3rem;
 }
+
+.candidate-profile-full p {
+    font-family: curve_thinregular;
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.candidate-profile-full li {
+    font-family: curve_thinregular;
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.candidate-profile-btn {
+    background-color: black !important;
+    border-radius: 5px;
+    box-shadow: white 10px 10px;
+    font-family: curveregular;
+    margin:5px;
+}
+
+.candidate-profile-btn:hover{
+    background-color: white !important;
+    box-shadow: black 10px 10px;
+    color: black;
+}

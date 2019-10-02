@@ -9,7 +9,7 @@ import CandidateHomePage from './components/CandidateHomePage';
 import EmployerHomePage from './components/EmployerHomePage';
 import CreateProfile from './components/CreateUserProfile';
 import EmployerPositions from './components/EmployerPositions/EmployerPositions';
-import AddPositionForm from './components/AddPositionForm';
+import AddPositionForm from './components/AddPositionForm/AddPositionForm';
 import CandidateProfile from './components/CandidateProfile/CandidateProfile'
 
 import 'materialize-css/dist/css/materialize.min.css';
