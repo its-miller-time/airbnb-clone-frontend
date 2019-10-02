@@ -1,10 +1,10 @@
-.position-card-container div:hover {
+.candidate-card-container div:hover {
     background-color: rgba(255,190,46,.9) !important;
     color: black !important;
     /* background-color: black !important; */
 }
 
-.position-card {
+.candidate-card {
     /* background-color: rgba(255,190,46,.9) !important; */
     background-color: black !important;
 }

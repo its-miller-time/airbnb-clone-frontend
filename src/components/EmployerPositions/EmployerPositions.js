@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import AddPositionForm from '../AddPositionForm';
+import AddPositionForm from '../AddPositionForm/AddPositionForm';
 import axios from 'axios';
 import Position from '../Utility/Position'
+import './EmployerPositions.css'
 
 
 class EmployerPositions extends Component{
@@ -31,7 +32,7 @@ class EmployerPositions extends Component{
         // })
         return(
             <div className="container-fluid col s12">
-                <h1>Open Positions</h1>
+                <h2 className="employer-positions-title">Open Positions</h2>
                 <div className='row'>
                     <div className="container col s6">
                         <AddPositionForm />

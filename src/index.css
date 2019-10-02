@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  box-sizing: border-box;
+  --borders: 1px solid #2b2b3a;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,* ::before, *::after {
+  box-sizing: border-box;
+}

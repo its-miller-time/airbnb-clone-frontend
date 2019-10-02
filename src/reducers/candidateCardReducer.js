@@ -38,33 +38,8 @@ export default(state=seedData, action) => {
     let newState = [...state];
     const p = action.payload;
     switch(action.type) {
-        case 'addCandidate':
-            const nameFirst = p.nameFirst
-            const nameLast = p.nameLast
-            const email = p.email
-            const phone = p.phone
-            const most_recent_job_role = p.most_recent_job_role
-            const desired_job_role = p.desired_job_role
-            const years_of_experience = p.years_of_experience
-            const desired_salary_range = p.desired_salary_range
-            const desired_location_city = p.desired_location_city
-            const skills = p.skills
-            const level_of_education = p.level_of_education
-
-            newState.push({
-                nameFirst,
-                nameLast,
-                email,
-                phone,
-                most_recent_job_role,
-                desired_job_role,
-                years_of_experience,
-                desired_salary_range,
-                desired_location_city,
-                skills,
-                level_of_education
-            })
-            return newState
+        case 'getCandidates':
+            return p.data
         default:
             return state
     }
