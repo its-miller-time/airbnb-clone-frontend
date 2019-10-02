@@ -1,8 +1,72 @@
-.employer-button {
-    margin-right: 4px;
-    padding: 10px;
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.job-seeker-button {
-    padding: 10px;
+.hero-title {
+    align-self: center;
+    justify-self: center;
+}
+
+.hero-title h5{
+    font-family: curveregular;
+}
+
+
+
+.menu {
+    background-color: rgba(255,190,46,.9);
+    padding: 40px;
+    align-content: center;
+}
+
+.menu a{
+    background-color: black !important;
+    border-radius: 5px;
+    box-shadow: white 10px 10px;
+    font-family: curveregular;
+}
+
+.menu a:hover{
+    background-color: white !important;
+    box-shadow: black 10px 10px;
+    color: black;
+}
+
+.employer-button {
+    /* margin-right: 8px; */
+    padding: 20px;
+    min-height: 100px;
+    text-align: center;
+}
+
+
+.banner-main {
+    background: url(/banner_main.svg) no-repeat center;
+    background-repeat: none;    
+    height: 50vh;
+    transform: scale(1.25)
+}
+
+.main-body-header {
+    text-align: center;
+    font-family: curveregular, Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 0 20px 0;    
+}
+
+.main-body-description p {
+}
+
+.main-body-description img {
+    width: 80px;
+    height: 80px;
+}
+
+.main-candidates {
+    margin-top: 5rem;
+}
+
+.main-candidates h4{
+    margin-bottom: 5rem;
 }

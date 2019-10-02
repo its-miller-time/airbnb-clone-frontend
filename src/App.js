@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 //IMPORT COMPONENTS HERE
 import Main from './components/MainPage/Main';
 import NavBar from './components/NavBar/NavBar';
-import CandidatesPage from './components/CandidatesPage';
+import CandidatesPage from './components/CandidatesPage/CandidatesPage';
 import CandidateHomePage from './components/CandidateHomePage';
 import EmployerHomePage from './components/EmployerHomePage';
 import CreateProfile from './components/CreateUserProfile';
@@ -26,7 +26,7 @@ function App() {
           {/* <Route exact path="/employer/positions/:id" component={SortedCandidatesList} /> */}
           <Route exact path="/employer/addPosition" component={AddPositionForm} />
           <Route exact path="/candidates" component={CandidatesPage} />
-          <Route exact path='/candidateProfile/:userName' component={CandidateProfile} />
+          <Route exact path='/candidateProfile/:id' component={CandidateProfile} />
           <Route exact path="/candidateHome" component={CandidateHomePage} />
           <Route exact path="/candidateHome/createprofile" component={CreateProfile} />
       </div>

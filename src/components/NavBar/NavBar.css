@@ -1,0 +1,21 @@
+
+
+.nav ul li{
+    color: black;
+    cursor: pointer;
+}
+
+.nav a{ 
+    color: black !important;
+    font-family: curve_thinregular;
+}
+
+.nav ul li:hover{
+    border-bottom: black solid 4px
+}
+
+.nav nav{
+    box-shadow: none;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
