@@ -6,6 +6,8 @@ import addPositionAction from '../../actions/addPositionAction'
 import "./AddPositionForm.css"
 
 
+
+
 class AddPositionForm extends Component{
 
     state = {
@@ -22,6 +24,13 @@ class AddPositionForm extends Component{
         console.log('POSITION SUBMIT CLICKED')
         const positionData = {...this.state}
         this.props.addPositionAction(positionData)
+        this.setState({
+            company_name: "",
+            title:"",
+            skills: [],
+            employer_position: "",
+            years_of_experience: "",
+        })
     }
 
     handlePositionChange = (e) =>{
@@ -83,11 +92,11 @@ class AddPositionForm extends Component{
                             <div className='input-field col s12'>
                                 <select id='yearsExperience' value={this.state.years_of_experience} onChange={this.handleExperienceChange} ref="select">
                                     <option value="">Years of Experience?</option>
-                                    <option value="1">0-1</option>
-                                    <option value="2">2-3</option>
-                                    <option value="3">3-5</option>
-                                    <option value="4">5-10</option>
-                                    <option value="5">10+</option>
+                                    <option value="0-1">0-1</option>
+                                    <option value="2-3">2-3</option>
+                                    <option value="3-5">3-5</option>
+                                    <option value="5-10">5-10</option>
+                                    <option value="10+">10+</option>
                                 </select>
                             </div>
                             <div className='input-field col s12' >

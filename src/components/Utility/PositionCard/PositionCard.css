@@ -9,6 +9,10 @@
     background-color: black !important;
 }
 
+.position-card-title {
+    font-size: 100% !important;
+}
+
 .drop {
     box-shadow: black 20px 20px;
     color: black;

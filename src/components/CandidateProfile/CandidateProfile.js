@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import './CandidateProfile.css';
 import axios from 'axios';
+import './CandidateProfile.css';
+import about from './id-card.svg'
+import summaryIcon from './report.svg'
+import skillIcon from './tools.svg'
+
 
 
 
@@ -35,7 +39,6 @@ class CandidateProfile extends Component{
         // const candidate = this.props.candidateData.find(candidate=>candidate.id === userId)
         // eslint-disable-next-line no-unused-vars
         const {nameFirst, nameLast,description, email, phone, most_recent_job_role, desired_job_role,years_of_experience,desired_salary_range,desired_location_city,skills,level_of_education,candidate_summary} = this.state.candidate
-        console.log(skills)
         
 
 
@@ -44,7 +47,6 @@ class CandidateProfile extends Component{
                 
                 <ul className="collection">
                     <li className="candidate-info collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" className="circle" />
                         <span className="title">{nameFirst} </span>
                         <p>{most_recent_job_role} <br/>
                             {desired_location_city}
@@ -52,16 +54,20 @@ class CandidateProfile extends Component{
                         {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
                     </li>
                     <li className="candidate-skills collection-item avatar">
-                        <i className="material-icons circle">folder</i>
                         <span className="title">Skills</span>
                         <br/>
-                        {skills}
+                    <div className="info-container row col s12">
+                        <img src={skillIcon} alt="" className="col s1 square-icon" />
+                        <p>{skills}</p>
+                    </div>
                         {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
                     </li>
                     <li className="collection-item avatar">
-                    <i className="material-icons circle green">insert_chart</i>
                     <span className="title">Candidate Summary</span>
-                    <p>{description}</p>
+                    <div className="info-container row col s12">
+                        <img src={summaryIcon} alt="" className="col s1 square-icon" />
+                        <p>{description}</p>
+                    </div>
                     {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
                     </li>
                     {/* <li className="collection-item avatar">

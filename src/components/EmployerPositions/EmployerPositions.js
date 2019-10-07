@@ -34,10 +34,10 @@ class EmployerPositions extends Component{
             <div className="container-fluid col s12">
                 <h2 className="employer-positions-title">Open Positions</h2>
                 <div className='row'>
-                    <div className="container col s6">
+                    <div className="container col l6 m12 s12">
                         <AddPositionForm />
                     </div>
-                    <div className="container col s6"> 
+                    <div className="container col l6 m12 s12"> 
                         <h3>Positions</h3>
                         <Position positions={this.state.positions} />
                     </div>
